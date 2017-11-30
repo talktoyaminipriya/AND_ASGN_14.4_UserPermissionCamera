@@ -5,55 +5,22 @@ package com.example.priya.userpermissioncamera;
  */
 
 import android.content.Context;
-
 import android.hardware.Camera;
-
 import android.util.Log;
-
 import android.view.Surface;
-
 import android.view.SurfaceHolder;
-
 import android.view.SurfaceView;
-
-
-
 import java.io.IOException;
 
-
-
-/**
-
- * Camera preview that displays a {@link Camera}.
-
- * <p>
-
- * Handles basic lifecycle methods to display and stop the preview.
-
- * <p>
-
- * Implementation is based directly on the documentation at
-
- * http://developer.android.com/guide/topics/media/camera.html
-
- * <p>
-
- * Using deprecated android.hardware.Camera in order to support {14 < API < 21}.
-
- */
 
 public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
 
 
 
     private static final String TAG = "CameraPreview";
-
     private SurfaceHolder mHolder;
-
     private Camera mCamera;
-
     private Camera.CameraInfo mCameraInfo;
-
     private int mDisplayOrientation;
 
 
@@ -64,15 +31,11 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
     }
 
-
-
     public CameraPreview(Context context, Camera camera, Camera.CameraInfo cameraInfo,
 
                          int displayOrientation) {
 
         super(context);
-
-
 
         // Do not initialise if no camera has been set
 
@@ -88,8 +51,6 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
         mDisplayOrientation = displayOrientation;
 
-
-
         // Install a SurfaceHolder.Callback so we get notified when the
 
         // underlying surface is created and destroyed.
@@ -99,26 +60,9 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         mHolder.addCallback(this);
 
     }
-
-
-
-    /**
-
-     * Calculate the correct orientation for a {@link Camera} preview that is displayed on screen.
-
-     * <p>
-
-     * Implementation is based on the sample code provided in
-
-     * {@link Camera#setDisplayOrientation(int)}.
-
-     */
-
     public static int calculatePreviewOrientation(Camera.CameraInfo info, int rotation) {
 
         int degrees = 0;
-
-
 
         switch (rotation) {
 
@@ -169,7 +113,6 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         return result;
 
     }
-
 
 
     public void surfaceCreated(SurfaceHolder holder) {
