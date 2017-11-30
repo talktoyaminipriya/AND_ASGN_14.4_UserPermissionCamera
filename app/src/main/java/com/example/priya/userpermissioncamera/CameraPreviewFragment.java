@@ -13,46 +13,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.Toast;
-
 import com.example.priya.userpermissioncamera.R;
 
-
-
-/**
-
- * Displays a {@link CameraPreview} of the first {@link Camera}.
-
- * An error message is displayed if the Camera is not available.
-
- * <p>
-
- * This Fragment is only used to illustrate that access to the Camera API has been granted (or
-
- * denied) as part of the runtime permissions model. It is not relevant for the use of the
-
- * permissions API.
-
- * <p>
-
- * Implementation is based directly on the documentation at
-
- * http://developer.android.com/guide/topics/media/camera.html
-
- */
-
 public class CameraPreviewFragment extends Fragment {
+    private static final String TAG = "CameraPreview"
+    
 
+  //Id of the camera to access. 0 is the first camera.
 
-
-    private static final String TAG = "CameraPreview";
-
-
-
-    /**
-
-     * Id of the camera to access. 0 is the first camera.
-
-     */
+    
 
     private static final int CAMERA_ID = 0;
 
@@ -72,11 +41,11 @@ public class CameraPreviewFragment extends Fragment {
 
 
 
-    /**
+    
 
-     * A safe way to get an instance of the Camera object.
+     // A safe way to get an instance of the Camera object.
 
-     */
+    
 
     public static Camera getCameraInstance(int cameraId) {
 
